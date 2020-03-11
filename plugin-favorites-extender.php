@@ -53,8 +53,8 @@ class jr_wl_ap {
                 'state_default' => apply_filters('favorites/button/text/default', __('Add to action plan', 'favorites'), 'actionplan'),
                 'state_active' => apply_filters('favorites/button/text/active', __('Added to action plan', 'favorites'), 'actionplan')
             );
-            array_push($buttons,'actionplan' => $actionplan);*/
+            array_push($buttons,'actionplan' => $actionplan);
+        )*/
             echo " GM - TEST " ;
-        )
     }
 }
