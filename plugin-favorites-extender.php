@@ -42,5 +42,17 @@ class jr_wl_ap {
         if (!$this->have_required_plugins())
             return;
         load_plugin_textdomain($this->textdomain, false, dirname(plugin_basename(__FILE__)) . '/languages');
+        add_filter('presetButton', array($this,'add_action_plan') );
+    }
+
+    function add_action_plan($buttons){
+        array_push($buttons,            'actionplan' => [
+                'label' => __('Action Plan', 'favorites'),
+                'icon' => apply_filters('favorites/button/icon', '<i class="sf-icon-actionplan"></i>', 'actionplan'),
+                'icon_class' => apply_filters('favorites/button/icon-class', 'sf-icon-actionplan', 'actionplan'),
+                'state_default' => apply_filters('favorites/button/text/default', __('Add to action plan', 'favorites'), 'actionplan'),
+                'state_active' => apply_filters('favorites/button/text/active', __('Added to action plan', 'favorites'), 'actionplan')
+            ]
+        )
     }
 }
