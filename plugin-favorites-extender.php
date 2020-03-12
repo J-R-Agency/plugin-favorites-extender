@@ -32,3 +32,23 @@ class PD101_Extension extends PD101_base {
 
 }
 new PD101_Extension;
+
+
+
+class Favorites_Extension extends Favorites {
+
+    /**
+    * Add a link to the settings on the plugin page
+    */
+    public function settingsLink($links)
+    { 
+        $settings_link = 'GM - <a href="options-general.php?page=simple-favorites">' . __('Settings', 'favorites') . '</a>'; 
+        $help_link = '<a href="http://favoriteposts.com">' . __('FAQ', 'favorites') . '</a>'; 
+        array_unshift($links, $help_link); 
+        array_unshift($links, $settings_link);
+        return $links; 
+    }
+
+}
+new PD101_Extension;
+
